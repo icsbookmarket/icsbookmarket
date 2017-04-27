@@ -1,36 +1,57 @@
-.landing-section-1 {
-  padding: 10px 10px 30px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+p {
+  text-align: left;
 }
 
-.landing-section-2 {
-  padding: 20px 10px 20px 10px;
-  background-color: #E5F9E7;
-  color:  #00B5AD;
+h1 {
+  font-size: 4em;
 }
 
-.landing-section-3 {
-  padding: 20px 10px 30px 30px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+h3, h4 {
+  font-style: italic;
 }
 
-.landing-section-5 {
-  padding: 20px 10px 20px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+.ui.middle.aligned.centered.grid.text.container {
+  color: white;
+  max-width: 300px;
+  max-height: 400px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-
-.landing-section-1-welcome {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 72px;
+.ui.centered.grid.login-container {
+  max-width: 300px;
+  max-height: 400px;
+  padding-top: 2%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: black;
+}
+ui.centered.card-container {
+  margin: 4% 10% 4% 10%;
 }
 
-.landing-section-header {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 36px;
+.login-title {
+  font-size: 3em;
+  color: white;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px grey;
+}
+
+.owl-carousel {
+  margin-top: 7%;
+  margin-bottom: 4%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

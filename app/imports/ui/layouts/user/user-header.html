@@ -1,10 +1,18 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted teal menu">
-    <div class="ui container">
-      <div class="item"><h1>BowFolios</h1></div>
-      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Filter</a>
+
+  <img class="ui fluid image" src="/images/header-books.png" style="max-height: 250px;"/>
+  <div class="ui center aligned grid container">
+    <div class="ui borderless menu" style="background-color: transparent; margin-top: -6%; border-radius: 0px; text-shadow: 1px 1px grey">
+      <a class="item" href="{{pathFor 'Home'}}" style="color: white;"><h2 style="15em">UHM ICS Book Market</h2></a>
+      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item" href="{{ pathFor 'Browse_Books_Page' }}">Browse Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Add_Book_Page'}} item" href="{{ pathFor 'Add_Book_Page' }}">Add Book</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Sell_Books_Page'}} item" href="{{ pathFor 'Sell_Books_Page' }}">Sell Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Book Check</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Book_Detail_Page'}} item" href="{{ pathFor 'Book_Detail_Page' }}">Book Detail</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Contact_Seller_Page'}} item" href="{{ pathFor 'Contact_Seller_Page' }}">Contact Seller</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Your_Books_Page'}} item" href="{{ pathFor 'Your_Books_Page' }}">My Books</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>
+
 </template>

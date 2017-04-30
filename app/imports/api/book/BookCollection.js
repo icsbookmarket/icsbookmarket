@@ -12,22 +12,21 @@ class BookCollection extends BaseCollection {
    */
   constructor() {
     super('Book', new SimpleSchema({
-      image: { type: SimpleSchema.RegEx.Url, optional: false },
-      title: { type: String, optional: false },
-      author: { type: String, optional: false },
-      course: { type: String, optional: false },
+      image: { type: SimpleSchema.RegEx.Url, optional: false, label: 'image' },
+      title: { type: String, optional: false, label: 'title' },
+      author: { type: String, optional: false, label: 'author' },
+      course: { type: String, optional: false, label: 'course' },
+      posts: { type: [Object], optional: true, label: 'posts' },
 
     }));
   }
-  define({ image, title, author, course }) {
-    check(image, SimpleSchema.RegEx.Url);
-    check(title, String);
-    check(author, String);
-    check(course, String);
+  define({ image = '', title = '', author = '', course = '', posts }) {
+    const checkPattern = { image: String, title: String, author: String, course: String };
+    check({ image, title, author, course }, checkPattern);
     if (this.find({ title }).count() > 0) {
       throw new Meteor.Error(`${title} is previously defined in another Book`);
     }
-    return this._collection.insert({ image, title, author, course });
+    return this._collection.insert({ image, title, author, course, posts });
   }
 
   findTitle(titleID) {

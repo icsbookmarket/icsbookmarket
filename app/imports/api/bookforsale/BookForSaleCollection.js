@@ -8,26 +8,23 @@ class BookForSaleCollection extends BaseCollection {
 
   constructor() {
     super('BookForSale', new SimpleSchema({
-      username: { type: String },
-      firstName: { type: String },
-      lastName: { type: String },
-      title: { type: String },
-      condition: { type: String },
-      price: { type: String },
-      description: { type: String },
+      username: { type: String, label: 'username' },
+      firstName: { type: String, label: 'firstName' },
+      lastName: { type: String, label: 'lastName' },
+      title: { type: String, label: 'title' },
+      condition: { type: String, label: 'condition' },
+      price: { type: String, label: 'price' },
+      description: { type: String, label: 'description' },
     }));
   }
 
   define({ username = '', firstName = '', lastName = '', title = '', condition = '', price = '', description = '' }) {
     const checkPattern = {
       username: String, firstName: String, lastName: String, title: String, condition: String,
-      price: String, description: String
+      price: String, description: String,
     };
     check({ username, firstName, lastName, title, condition, price, description }, checkPattern);
-
-    Books.assertTitle(title);
     return this._collection.insert({ username, firstName, lastName, title, condition, price, description });
-
   }
   dumpOne(docID) {
     const doc = this.findDoc(docID);

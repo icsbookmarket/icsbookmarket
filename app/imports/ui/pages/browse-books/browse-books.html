@@ -1,0 +1,35 @@
+<template name="Browse_Books">
+  <div class="ui middle aligned centered grid" style="padding-left: 2cm; padding-right: 2cm; padding-bottom: 1cm;">
+
+    <br>
+    <div class="row">
+      <div class="nine wide column" style="padding-left: 1cm; padding-right: 1cm">
+        <br><br>
+        <h1>LIST OF BOOKS AVAILABLE</h1><br>
+        <hr>
+      </div>
+    </div>
+
+    <div class="ui six cards" style=" padding-top: 10px; padding-left: 10px; padding-bottom: 30px;">
+      {{#each Book in bookdataList}}
+      <div class="ui card">
+        <div class="image">
+          <img style="height: 265px" src={{Book.image}} />
+        </div>
+        <div class="content">
+          <a class="header">{{Book.title}}</a>
+          <div class="meta">
+            <span class="author">{{Book.author}}</span>
+          </div>
+          <div class="course">
+            {{Book.course}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Check Availability</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

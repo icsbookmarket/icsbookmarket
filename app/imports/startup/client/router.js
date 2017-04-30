@@ -60,6 +60,14 @@ userRoutes.route('/profile', {
   },
 });
 
+export const sellPageRouteName = 'Sell_Books';
+userRoutes.route('/sell', {
+  name: sellPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: sellPageRouteName });
+  },
+});
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

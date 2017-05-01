@@ -1,0 +1,38 @@
+<template name="Sell_Books_Page”>
+  <div style="margin-top: 3%; margin-bottom: 1%; margin-left: 1%; margin-right: 1%;" class="ui text container segment">
+
+<div class="ui dividing header">Post a Book For Sale</div>
+<form class="ui equal width form sale-data-form {{ errorClass }}">
+
+  <h4 class="ui dividing header">Book For Sale Information</h4>
+
+  <!-- Will use this one when I can properly populate with Bookdata
+  <div class="field">
+    {{> Select_Form_Control label="TextBook" options=titles errorMessage=(fieldError "titles")}}
+  </div>
+  -->
+  <div class="field">
+    {{> Select_Form_Control label="Titles" options=booktitles multiple=false required=true  errorMessage=(fieldError "titles")}}
+  </div>
+
+
+  <div class="field">
+    {{> Text_Form_Control label="Price" placeholder="24.99" required=true errorMessage=(fieldError "price")}}
+  </div>
+
+  <div class="field">
+    {{> Radio_Form_Control label="Condition" name="Condition" required=true radios=conditions errorMessage=(fieldError "condition") }}
+
+  </div>
+
+  <div class="fields">
+    {{> TextArea_Form_Control label="Description" placeholder="short bio statement here" errorMessage=(fieldError "description") }}
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui big green button" type="submit">Publish</button>
+  </div>
+
+</form>
+</div>
+</template>

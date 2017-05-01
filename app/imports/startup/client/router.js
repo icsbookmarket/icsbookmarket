@@ -59,6 +59,20 @@ userRoutes.route('/profile', {
     BlazeLayout.render('User_Layout', { main: profilePageRouteName });
   },
 });
+export const sellPageRouteName = 'Sell_Books';
+userRoutes.route('/sell', {
+  name: sellPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: sellPageRouteName });
+  },
+});
+export const browsePageRouteName = 'Browse_Books_Page';
+userRoutes.route('/browse', {
+  name: browsePageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: browsePageRouteName });
+  },
+});
 
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {

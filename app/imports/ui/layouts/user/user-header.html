@@ -4,7 +4,7 @@
   <div class="ui center aligned grid container">
     <div class="ui borderless menu" style="background-color: transparent; margin-top: -6%; border-radius: 0px; text-shadow: 1px 1px grey">
       <a class="item" href="{{pathFor 'Home'}}" style="color: white;"><h2 style="15em">UHM ICS Book Market</h2></a>
-      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item" href="{{ pathFor 'Browse_Books_Page' }}">Browse Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item" href="{{ pathFor 'Browse_Books_Page' username=routeUserName }}">Browse Books</a>
       <a style="color: white;" class="{{ isActiveRoute 'Add_Book_Page'}} item" href="{{ pathFor 'Add_Book_Page' }}">Add Book</a>
       <a style="color: white;" class="{{ isActiveRoute 'Sell_Books'}} item" href="{{ pathFor 'Sell_Books' username=routeUserName }}">Sell Books</a>
       <a style="color: white;" class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Book Check</a>

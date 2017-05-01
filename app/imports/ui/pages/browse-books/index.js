@@ -1,2 +1,2 @@
-import './browse-books.html';
-import './browse-books.js';
+import './browse-books-page.html';
+import './browse-books-page.js';

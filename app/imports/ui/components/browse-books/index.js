@@ -1,0 +1,1 @@
+import './book-profile.html';

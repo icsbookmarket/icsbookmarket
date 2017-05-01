@@ -67,6 +67,13 @@ userRoutes.route('/sell', {
     BlazeLayout.render('User_Layout', { main: sellPageRouteName });
   },
 });
+export const browsePageRouteName = 'Browse_Books_Page';
+userRoutes.route('/browse', {
+  name: browsePageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: browsePageRouteName });
+  },
+});
 
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {

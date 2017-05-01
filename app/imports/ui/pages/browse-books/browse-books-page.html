@@ -1,0 +1,19 @@
+<template name="Browse_Books_Page">
+  <div class="ui middle aligned centered grid" style="padding-left: 2cm; padding-right: 2cm; padding-bottom: 1cm;">
+
+    <br>
+    <div class="row">
+      <div class="nine wide column" style="padding-left: 1cm; padding-right: 1cm">
+        <br><br>
+        <h1>LIST OF BOOKS AVAILABLE</h1><br>
+        <hr>
+      </div>
+    </div>
+
+    <div class="ui six cards" style=" padding-top: 10px; padding-left: 10px; padding-bottom: 30px;">
+      {{#each Book in books}}
+        {{> Book_Profile Book=Book}}
+      {{/each}}
+    </div>
+  </div>
+</template>

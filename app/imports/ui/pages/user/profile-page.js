@@ -3,14 +3,13 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
-import { BookForSales } from '/imports/api/bookforsale/BookForSaleCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Profile_Page.onCreated(function onCreated() {
-  this.subscribe(BookForSales.getPublicationName());
+  this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
@@ -52,10 +51,18 @@ Template.Profile_Page.events({
     event.preventDefault();
     const firstName = event.target.First.value;
     const lastName = event.target.Last.value;
+    const title = event.target.Title.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
-    const bookForSales = FlowRouter.getParam('bookForSales');
+    const picture = event.target.Picture.value;
+    const github = event.target.Github.value;
+    const facebook = event.target.Facebook.value;
+    const instagram = event.target.Instagram.value;
+    const bio = event.target.Bio.value;
+    const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
+    const interests = _.map(selectedInterests, (option) => option.value);
 
-    const updatedProfileData = { username, firstName, lastName, bookForSales };
+    const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests,
+      username };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();

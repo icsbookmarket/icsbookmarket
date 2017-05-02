@@ -34,7 +34,7 @@ class BookCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ image = '', title = '', author = '', course = '' }) {
+  define({ image, title, author, course }) {
     // make sure required fields are OK.
     const checkPattern = { image: SimpleSchema.RegEx.Url, title: String, author: String, course: String };
     check({ image, title, author, course }, checkPattern);

@@ -1,4 +1,42 @@
 <template name="Browse_Books_Page">
+  <div class="ui middle aligned centered grid" style="padding-left: 2cm; padding-right: 2cm; padding-bottom: 1cm;">
+
+    <br>
+    <div class="row">
+      <div class="nine wide column" style="padding-left: 1cm; padding-right: 1cm">
+        <br><br>
+        <h1>LIST OF BOOKS AVAILABLE</h1><br>
+        <hr>
+      </div>
+    </div>
+
+    <div class="ui six cards" style=" padding-top: 10px; padding-left: 10px; padding-bottom: 30px;">
+      {{#each Bookdata in bookdataList}}
+      <div class="ui card">
+        <div class="image">
+          <img style="height: 265px" src={{Bookdata.image}} />
+        </div>
+        <div class="content">
+          <a class="header">{{Bookdata.title}}</a>
+          <div class="meta">
+            <span class="author">{{Bookdata.author}}</span>
+          </div>
+          <div class="course">
+            {{Bookdata.course}}
+          </div>
+        </div>
+        <div class="extra content">
+         <!-- <a class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Check Availability</a> -->
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <button style="padding-left: 1cm; padding-right: 1cm;" class="{{ isActiveRoute 'Add_Book_Page'}} ui fluid medium red button" onclick="location.href='{{ pathFor 'Add_Book_Page' }}'">Add a New Book to the List</button>
+
+  </div>
+</template>
+<!--<template name="Browse_Books_Page">
   {{#if Template.subscriptionsReady}}
   <div class="ui middle aligned centered grid" style="padding-left: 2cm; padding-right: 2cm; padding-bottom: 1cm;">
 
@@ -16,10 +54,12 @@
         {{> Browse_Books_Profile book=book}}
       {{/each}}
     </div>
+    -->
 
     <!--<button style="padding-left: 1cm; padding-right: 1cm;" class="{{ isActiveRoute 'Add_Book_Page'}} ui fluid medium red button" onclick="location.href='{{ pathFor 'Add_Book_Page' }}'">Add a New Book to the List</button>
 -->
 
-  </div>
+ <!-- </div>
   {{/if}}
 </template>
+ -->

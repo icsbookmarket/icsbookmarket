@@ -1,4 +1,5 @@
 import '/imports/startup/client';
+import '/imports/ui/components/browse-books';
 import '/imports/ui/components/form-controls';
 import '/imports/ui/components/directory';
 import '/imports/ui/components/user';

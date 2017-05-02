@@ -6,5 +6,5 @@ import { BookForSales } from '/imports/api/bookforsale/BookForSaleCollection';
 Interests.publish();
 Profiles.publish();
 Books.publish();
-BookForSales.publish();
+//BookForSales.publish();
 

@@ -1,4 +1,5 @@
 <template name="Browse_Books_Page">
+  {{#if Template.subscriptionsReady}}
   <div class="ui middle aligned centered grid" style="padding-left: 2cm; padding-right: 2cm; padding-bottom: 1cm;">
 
     <br>
@@ -11,28 +12,14 @@
     </div>
 
     <div class="ui six cards" style=" padding-top: 10px; padding-left: 10px; padding-bottom: 30px;">
-      {{#each Book in bookList}}
-      <div class="ui card">
-        <div class="image">
-          <img style="height: 265px" src={{Book.image}} />
-        </div>
-        <div class="content">
-          <a class="header">{{Book.title}}</a>
-          <div class="meta">
-            <span class="author">{{Book.author}}</span>
-          </div>
-          <div class="course">
-            {{Book.course}}
-          </div>
-        </div>
-        <div class="extra content">
-          <a class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Check Availability</a>
-        </div>
-      </div>
+      {{#each book in books}}
+        {{> Browse_Books_Profile book=book}}
       {{/each}}
     </div>
 
     <!--<button style="padding-left: 1cm; padding-right: 1cm;" class="{{ isActiveRoute 'Add_Book_Page'}} ui fluid medium red button" onclick="location.href='{{ pathFor 'Add_Book_Page' }}'">Add a New Book to the List</button>
 -->
+
   </div>
+  {{/if}}
 </template>

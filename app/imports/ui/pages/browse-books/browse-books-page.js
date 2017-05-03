@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { Books } from '/imports/api/book/BookCollection.js';
 
 Template.Browse_Books_Page.onCreated(function onCreated() {
-  this.subscribe('Books');
+  this.subscribe(Books.getPublicationName());
 });
 
 Template.Browse_Books_Page.helpers({

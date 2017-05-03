@@ -36,7 +36,7 @@ class BookCollection extends BaseCollection {
    */
   define({ image, title, author, course }) {
     // make sure required fields are OK.
-    const checkPattern = { image: SimpleSchema.RegEx.Url, title: String, author: String, course: String };
+    const checkPattern = { image: String, title: String, author: String, course: String };
     check({ image, title, author, course }, checkPattern);
 
     if (this.find({ title }).count() > 0) {

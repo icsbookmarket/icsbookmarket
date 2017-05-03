@@ -1,0 +1,20 @@
+<template name="Add_Books_Page">
+  <div class="ui middle aligned centered grid" style=" padding-top: 1cm; padding-bottom: 1cm; padding-left: 0.5cm; padding-right: 0.5cm;">
+
+    <form class="ui form book-data-form {{ errorClass }}">
+      <h4 class="ui dividing header">Add Book</h4>
+      <div class="field">
+        {{> Text_Form_Control label="Image"  placeholder="Image URL" required=true errorMessage=(fieldError "image")}}
+
+        {{> Text_Form_Control label="Title" required=true errorMessage=(fieldError "title")}}
+
+        <div class="two fields">
+          {{> Text_Form_Control label="Author" placeholder="Last name of the author" required=true errorMessage=(fieldError "author")}}
+          {{> Text_Form_Control label="Course" placeholder="ex) ICS 111" required=true errorMessage=(fieldError "course")}}
+        </div>
+      </div>
+
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+</template>

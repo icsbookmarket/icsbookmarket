@@ -7,8 +7,7 @@ import { _ } from 'meteor/underscore';
 class BookCollection extends BaseCollection {
 
   /**
-   * Creates the Book Collection
-   * Going to be similar to the Interests Collection
+   * Creates the Profile collection.
    */
   constructor() {
     super('Book', new SimpleSchema({
@@ -16,38 +15,43 @@ class BookCollection extends BaseCollection {
       title: { type: String, optional: false, label: 'title' },
       author: { type: String, optional: false, label: 'author' },
       course: { type: String, optional: false, label: 'course' },
-      posts: { type: [Object], optional: true, label: 'posts' },
-
     }));
   }
-  define({ image = '', title = '', author = '', course = '', posts }) {
+
+  /**
+   * Defines a new book.
+   * @example
+   * Profiles.define({ image: 'Philip',
+   *                   title: 'Johnson',
+   *                   author: 'johnson',
+   *                   course:
+    *                   });
+   * @param { Object } description Object with required key username.
+   * Remaining keys are optional.
+   * Username must be unique for all users. It should be the UH email account.
+   * Interests is an array of defined interest names.
+   * @throws { Meteor.Error } If a user with the supplied username already exists, or
+   * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
+   * @returns The newly created docID.
+   */
+  define({ image, title, author, course }) {
+    // make sure required fields are OK.
     const checkPattern = { image: String, title: String, author: String, course: String };
     check({ image, title, author, course }, checkPattern);
+
     if (this.find({ title }).count() > 0) {
-      throw new Meteor.Error(`${title} is previously defined in another Book`);
+      throw new Meteor.Error(`${title} is previously defined in another Profile`);
     }
-    return this._collection.insert({ image, title, author, course, posts });
+
+    // Throw an error if any of the passed book names are not defined.
+    return this._collection.insert({ image, title, author, course });
   }
 
-  findTitle(titleID) {
-    this.assertDefined(titleID);
-    return this.findDoc(titleID).title;
-  }
-  findTitles(titlesID) {
-    return titlesID.map(titleID => this.findTitle(titleID));
-  }
-  assertTitle(title) {
-    this.findDoc(title);
-  }
-  assertTitles(titles) {
-    _.each(titles, title => this.assertTitle(title));
-  }
-  findID(title) {
-    return (this.findDoc(title)._id);
-  }
-  findIDs(titles) {
-    return (titles) ? titles.map((instance) => this.findID(instance)) : [];
-  }
+  /**
+   * Returns an object representing the Profile docID in a format acceptable to define().
+   * @param docID The docID of a Profile.
+   * @returns { Object } An object representing the definition of docID.
+   */
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const image = doc.image;
@@ -57,4 +61,8 @@ class BookCollection extends BaseCollection {
     return { image, title, author, course };
   }
 }
+
+/**
+ * Provides the singleton instance of this class to all other entities.
+ */
 export const Books = new BookCollection();

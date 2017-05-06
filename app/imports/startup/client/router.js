@@ -59,6 +59,13 @@ userRoutes.route('/profile', {
     BlazeLayout.render('User_Layout', { main: profilePageRouteName });
   },
 });
+export const addBookPageRouteName = 'Add_Books_Page';
+userRoutes.route('/add', {
+  name: addBookPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: addBookPageRouteName });
+  },
+});
 export const browsePageRouteName = 'Browse_Books_Page';
 userRoutes.route('/browse', {
   name: browsePageRouteName,

@@ -6,21 +6,20 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Books } from '/imports/api/book/BookCollection.js';
 
 /* eslint-disable no-param-reassign */
+const displayErrorMessages = 'displayErrorMessages';
 
 Template.Add_Books_Page.onCreated(function onCreated() {
   this.subscribe(Books.getPublicationName());
   this.messageFlags = new ReactiveDict();
   // this.messageFlags.set(displaySuccessMessage, false);
-  // this.messageFlags.set(displayErrorMessages, false);
-  // this.context = Books.getSchema().namedContext('Add_Books_Page');
+  this.messageFlags.set(displayErrorMessages, false);
+  this.context = Books.getSchema().namedContext('Add_Books_Page');
 });
 
-const displayErrorMessages = 'displayErrorMessages';
-
-export const groupObjects = [{ label: 'Image', value: 'Image' },
-  { label: 'Title', value: 'Title' },
-  { label: 'Author', value: 'Author' },
-  { label: 'Course', value: 'Course' }];
+// export const groupObjects = [{ label: 'Image', value: 'Image' },
+//  { label: 'Title', value: 'Title' },
+//  { label: 'Author', value: 'Author' },
+//  { label: 'Course', value: 'Course' }];
 
 Template.Add_Books_Page.helpers({
   errorClass() {
@@ -31,9 +30,9 @@ Template.Add_Books_Page.helpers({
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
-  group() {
-    return groupObjects;
-  },
+  // group() {
+  //  return groupObjects;
+  // },
 });
 
 Template.Add_Books_Page.events({
@@ -53,9 +52,10 @@ Template.Add_Books_Page.events({
     // Determine validity.
     instance.context.validate(newBook);
     if (instance.context.isValid()) {
-      Books.insert(newBook);
+      Books.define(newBook);
       instance.messageFlags.set(displayErrorMessages, false);
-      FlowRouter.go('Browse_Books_Page');
+      const username = Meteor.user().profile.name;
+      FlowRouter.go(`/${username}/browse`);
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

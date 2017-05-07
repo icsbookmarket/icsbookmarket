@@ -5,6 +5,7 @@
     <div class="ui borderless menu"
          style="background-color: transparent; margin-top: -6%; margin-bottom: 3.75%; border-radius: 0px; text-shadow: 1px 1px grey">
       <a class="item" href="{{pathFor 'Home'}}" style="color: white;"><h2 style="15em">UHM ICS Book Market</h2></a>
+<<<<<<< HEAD
       <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item"
          href="{{ pathFor 'Browse_Books_Page' username=routeUserName }}">Book Directory</a>
       <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item"
@@ -17,6 +18,15 @@
          href="{{ pathFor 'Contact_Seller_Page' }}">Contact Seller</a>
       <a style="color: white;" class="{{ isActiveRoute 'Your_Books_Page'}} item" href="{{ pathFor 'Your_Books_Page' }}">My
         Books</a>
+=======
+      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item" href="{{ pathFor 'Browse_Books_Page' username=routeUserName }}">Browse Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Add_Books_Page'}} item" href="{{ pathFor 'Add_Books_Page' username=routeUserName}}">Add Book</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Sell_Books_Page'}} item" href="{{ pathFor 'Sell_Books_Page' username=routeUserName }}">Sell Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Book_Check_Page'}} item" href="{{ pathFor 'Book_Check_Page' }}">Book Check</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Book_Detail_Page'}} item" href="{{ pathFor 'Book_Detail_Page' }}">Book Detail</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Contact_Seller_Page'}} item" href="{{ pathFor 'Contact_Seller_Page' }}">Contact Seller</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Your_Books_Page'}} item" href="{{ pathFor 'Your_Books_Page' }}">My Books</a>
+>>>>>>> master
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>

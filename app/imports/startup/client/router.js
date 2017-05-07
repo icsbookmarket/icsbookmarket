@@ -59,6 +59,7 @@ userRoutes.route('/profile', {
     BlazeLayout.render('User_Layout', { main: profilePageRouteName });
   },
 });
+
 export const addBookPageRouteName = 'Add_Books_Page';
 userRoutes.route('/add', {
   name: addBookPageRouteName,
@@ -66,6 +67,7 @@ userRoutes.route('/add', {
     BlazeLayout.render('User_Layout', { main: addBookPageRouteName });
   },
 });
+
 export const browsePageRouteName = 'Browse_Books_Page';
 userRoutes.route('/browse', {
   name: browsePageRouteName,
@@ -73,6 +75,15 @@ userRoutes.route('/browse', {
     BlazeLayout.render('User_Layout', { main: browsePageRouteName });
   },
 });
+
+export const listingsPageRouteName = 'Book_Listings_Page';
+userRoutes.route('/listings', {
+  name: listingsPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: listingsPageRouteName });
+  },
+});
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

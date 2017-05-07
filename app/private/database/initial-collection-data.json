@@ -304,6 +304,23 @@
 
       ]
     },
+
+    {
+      "name": "BookCollection",
+      "contents": [
+        {
+          "image": "/images/111.png",
+          "title": "INTRODUCTION TO PROGRAMMING USING JAVA",
+          "author": "ECK",
+          "course": "ICS 111"
+        },
+
+
+      ]
+    },
+
+
+
     {
       "name": "ProfileCollection",
       "contents": [

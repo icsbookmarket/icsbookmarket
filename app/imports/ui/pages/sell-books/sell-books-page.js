@@ -42,7 +42,7 @@ Template.Sell_Books_Page.helpers({
     });
   },
   booktitles() {
-    const bookDataTitles = Books.find();
+    const bookDataTitles = Books.find().fetch();
     const l = [];
     _.map(bookDataTitles, function makeObjectTitle(book) {
       l.push({
@@ -81,7 +81,7 @@ Template.Sell_Books_Page.events({
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    BookForSales.clean(newSaleData);
+    BookForSales.getSchema().clean(newSaleData);
     console.log(newSaleData);
     // Determine validity.
     instance.context.validate(newSaleData);

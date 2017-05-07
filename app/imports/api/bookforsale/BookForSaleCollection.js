@@ -9,9 +9,9 @@ class BookForSaleCollection extends BaseCollection {
   constructor() {
     super('BookForSale', new SimpleSchema({
       username: { type: String, label: 'username' },
-      firstName: { type: String, label: 'firstName' },
-      lastName: { type: String, label: 'lastName' },
-      title: { type: String, label: 'title' },
+      firstNameOfSeller: { type: String, label: 'firstNameOfSeller' },
+      lastNameOfSeller: { type: String, label: 'lastNameOfSeller' },
+      titleOfSale: { type: String, label: 'titleOfSale' },
       condition: { type: String, label: 'condition' },
       price: { type: String, label: 'price' },
       description: { type: String, label: 'description' },

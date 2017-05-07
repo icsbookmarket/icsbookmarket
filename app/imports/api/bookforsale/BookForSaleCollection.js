@@ -29,13 +29,13 @@ class BookForSaleCollection extends BaseCollection {
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const username = doc.username;
-    const firstName = doc.firstName;
-    const lastName = doc.lastName;
-    const title = doc.title;
+    const firstNameOfSeller = doc.firstNameOfSeller;
+    const lastNameOfSeller = doc.lastNameOfSeller;
+    const titleOfList = doc.titleOfList;
     const condition = doc.condition;
     const price = doc.price;
     const description = doc.description;
-    return { username, firstName, lastName, title, condition, price, description };
+    return { username, firstNameOfSeller, lastNameOfSeller, titleOfList, condition, price, description };
   }
 }
 

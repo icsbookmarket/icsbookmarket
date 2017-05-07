@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { Books } from '/imports/api/book/BookCollection.js';
+import { Books } from '/imports/api/book/BookCollection';
 
 Template.Browse_Books_Page.onCreated(function onCreated() {
   this.subscribe(Books.getPublicationName());

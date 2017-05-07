@@ -306,16 +306,80 @@
     },
 
     {
-      "name": "BookCollection",
+      "name": "BookForSaleCollection",
       "contents": [
         {
-          "image": "/images/111.png",
-          "title": "INTRODUCTION TO PROGRAMMING USING JAVA",
-          "author": "ECK",
-          "course": "ICS 111"
+          "username": "markrc",
+          "firstName": "Mark",
+          "lastName": "Cummins",
+          "title": "THE C PROGRAMMING LANGUAGE",
+          "condition": "Excellent",
+          "price": "5.00",
+          "description": "Pretty useful. Like new."
         },
-
-
+        {
+          "username": "vdirenzo",
+          "firstName": "Vincent",
+          "lastName": "DiRienzo",
+          "title": "MASTERING NETWORKS INTERNET LAB MANUAL",
+          "condition": "Excellent",
+          "price": "60.00",
+          "description": "A must for ICS 351."
+        },
+        {
+          "username": "shaziney",
+          "firstName": "Shaziney",
+          "lastName": "Natividad",
+          "title": "COMPUTER SECURITY AND CRYPTOGRAPHY",
+          "condition": "Great",
+          "price": "80.00",
+          "description": "A little wear on the cover, but perfect inside."
+        },
+        {
+          "username": "jiajie",
+          "firstName": "Jiajie",
+          "lastName": "Li",
+          "title": "NETWORK SECURITY",
+          "condition": "Excellent",
+          "price": "25.00",
+          "description": "Like new."
+        },
+        {
+          "username": "clemmer",
+          "firstName": "Kenji",
+          "lastName": "Clemmer",
+          "title": "DISCRETE MATHEMATICS AND ITS APPLICATION",
+          "condition": "Fair",
+          "price": "20.00",
+          "description": "Slight crease on the cover; otherwise, good."
+        },
+        {
+          "username": "pakchar",
+          "firstName": "Charles",
+          "lastName": "Pak",
+          "title": "INTRODUCTION TO ALGORITHMS",
+          "condition": "Good",
+          "price": "50.00",
+          "description": "Must sell ASAP."
+        },
+        {
+          "username": "ahlim",
+          "firstName": "Ah Lim",
+          "lastName": "Om",
+          "title": "DISCRETE MATHEMATICS AND ITS APPLICATION",
+          "condition": "Great",
+          "price": "25.00",
+          "description": "Barely used, has no damage."
+        },
+        {
+          "username": "brendt",
+          "firstName": "Brendt",
+          "lastName": "McFeeley",
+          "title": "INTRODUCTION TO ALGORITHMS",
+          "condition": "Excellent",
+          "price": "60.00",
+          "description": "In pristine condition."
+        }
       ]
     },
 

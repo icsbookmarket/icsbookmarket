@@ -1,8 +1,6 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { Books } from '/imports/api/book/BookCollection';
 import { check } from 'meteor/check';
-import { Meteor } from 'meteor/meteor';
 
 class BookForSaleCollection extends BaseCollection {
 
@@ -40,5 +38,5 @@ class BookForSaleCollection extends BaseCollection {
   }
 }
 
-export const BookForSales = new BookForSaleCollection();
+export const BookForSale = new BookForSaleCollection();
 

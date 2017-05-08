@@ -17,7 +17,7 @@ class BookForSaleCollection extends BaseCollection {
     }));
   }
 
-  define({ username = '', firstNameOfSeller = '', lastNameOfSeller = '', titleOfSale = '', condition = '', price = '', description = '' }) {
+  define({ username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description }) {
     const checkPattern = {
       username: String, firstNameOfSeller: String, lastNameOfSeller: String, titleOfSale: String, condition: String,
       price: String, description: String,

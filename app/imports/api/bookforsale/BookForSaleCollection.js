@@ -18,24 +18,25 @@ class BookForSaleCollection extends BaseCollection {
     }));
   }
 
-  define({ username = '', firstName = '', lastName = '', title = '', condition = '', price = '', description = '' }) {
+  define({ username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description }) {
     const checkPattern = {
-      username: String, firstName: String, lastName: String, title: String, condition: String,
+      username: String, firstNameOfSeller: String, lastNameOfSeller: String, titleOfSale: String, condition: String,
       price: String, description: String,
     };
-    check({ username, firstName, lastName, title, condition, price, description }, checkPattern);
-    return this._collection.insert({ username, firstName, lastName, title, condition, price, description });
+    check({ username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description }, checkPattern);
+    return this._collection.insert({ username, firstNameOfSeller, lastNameOfSeller, titleOfSale,
+      condition, price, description });
   }
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const username = doc.username;
     const firstNameOfSeller = doc.firstNameOfSeller;
     const lastNameOfSeller = doc.lastNameOfSeller;
-    const titleOfList = doc.titleOfList;
+    const titleOfSale = doc.titleOfSale;
     const condition = doc.condition;
     const price = doc.price;
     const description = doc.description;
-    return { username, firstNameOfSeller, lastNameOfSeller, titleOfList, condition, price, description };
+    return { username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description };
   }
 }
 

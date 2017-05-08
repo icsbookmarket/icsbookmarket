@@ -87,6 +87,13 @@ userRoutes.route('/sell', {
     BlazeLayout.render('User_Layout', { main: sellPageRouteName });
   },
 });
+export const editPageRouteName = 'Edit_Sell_Books_Page';
+userRoutes.route('/edit', {
+  name: editPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: editPageRouteName });
+  },
+});
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

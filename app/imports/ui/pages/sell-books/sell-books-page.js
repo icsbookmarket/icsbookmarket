@@ -65,19 +65,22 @@ Template.Sell_Books_Page.events({
     // console.log('Below here is log of bookArray');
     // console.log(bookArray);
     const username = FlowRouter.getParam('username');
-    const firstName = event.target.First.Value;
-    const lastName = event.target.Last.Value;
-    const title = event.target.Titles.label;
+    const firstNameOfSeller = event.target.First.value;
+    const lastNameOfSeller = event.target.Last.value;
+    const title = event.target.Titles.value;
     const condition = event.target.Condition.value;
     const price = event.target.Price.value;
     const description = event.target.Description.value;
+    console.log(instance);
+    console.log($("#name",$(event.target)).value);
     console.log('Below here is log of title');
     console.log(title);
+    console.log(event.target);
     console.log('Can you see me?');
     console.log(`price: ${price}, condition: ${condition}, 
-    description: ${description}, lastName: ${lastName}, firstName: ${firstName}, address ${username}, title ${title}`);
+    description: ${description}, lastName: ${lastNameOfSeller}, firstName: ${firstNameOfSeller}, address ${username}, title ${title}`);
 
-    const newSaleData = { username, firstName, lastName, title, condition, price, description };
+    const newSaleData = { username, firstNameOfSeller, lastNameOfSeller, title, condition, price, description };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

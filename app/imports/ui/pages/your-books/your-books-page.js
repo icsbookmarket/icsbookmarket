@@ -25,6 +25,4 @@ Template.Your_Books_Page.helpers({
 Template.Sell_Books_Page.onRendered(function enableDropDown() {
   this.$('.dropdown').dropdown();
 });
-/**
- * Created by MarkCummins on 5/7/17.
- */
+

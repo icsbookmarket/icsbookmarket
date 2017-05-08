@@ -4,7 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Books } from '/imports/api/book/BookCollection.js';
-import { BookForSales } from '/imports/api/bookforsale/BookForSaleCollection.js';
+import { BookForSale } from '/imports/api/bookforsale/BookForSaleCollection.js';
 
 Template.Sell_Books_Page.helpers({
   books() {
@@ -24,7 +24,7 @@ Template.Sell_Books_Page.onCreated(function onCreated() {
   this.subscribe(Books.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = BookForSales.getSchema().namedContext('Sell_Books_Page');
+  this.context = BookForSale.getSchema().namedContext('Sell_Books_Page');
 });
 
 Template.Sell_Books_Page.helpers({
@@ -84,7 +84,7 @@ Template.Sell_Books_Page.events({
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    BookForSales.getSchema().clean(newSaleData);
+    BookForSale.getSchema().clean(newSaleData);
     console.log(newSaleData);
     // Determine validity.
     instance.context.validate(newSaleData);

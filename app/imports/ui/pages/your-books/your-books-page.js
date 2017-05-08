@@ -22,7 +22,15 @@ Template.Your_Books_Page.helpers({
 });
 
 
-Template.Sell_Books_Page.onRendered(function enableDropDown() {
+Template.Your_Books_Page.onRendered(function enableDropDown() {
   this.$('.dropdown').dropdown();
 });
 
+Template.Your_Books_Page.events({
+  'click.delete'(event) {
+    event.preventDefault();
+    BookForSale.removeIt(FlowRouter.getParam('titleOfSale'));
+    const user = Meteor.user().profile.name;
+    FlowRouter.go(`/${user}/your`);
+  },
+});

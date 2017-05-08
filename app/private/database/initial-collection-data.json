@@ -319,6 +319,24 @@
           "description": "Pretty useful. Like new."
         },
         {
+          "username": "markrc",
+          "firstNameOfSeller": "Mark",
+          "lastNameOfSeller": "Cummins",
+          "titleOfSale": "THE C PROGRAMMING LANGUAGE",
+          "condition": "Excellent",
+          "price": "10.00",
+          "description": "Pretty useless. Like new."
+        },
+        {
+          "username": "markrc",
+          "firstNameOfSeller": "Mark",
+          "lastNameOfSeller": "Cummins",
+          "titleOfSale": "THE C PROGRAMMING LANGUAGE",
+          "condition": "Excellent",
+          "price": "5.00",
+          "description": "Pretty cool. Like you."
+        },
+        {
           "username": "vdirenzo",
           "firstNameOfSeller": "Vincent",
           "lastNameOfSeller": "DiRienzo",

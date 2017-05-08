@@ -75,7 +75,7 @@ userRoutes.route('/browse', {
     BlazeLayout.render('User_Layout', { main: browsePageRouteName });
   },
 });
-<<<<<<< HEAD
+
 
 export const listingsPageRouteName = 'Book_Listings_Page';
 userRoutes.route('/listings', {
@@ -85,7 +85,6 @@ userRoutes.route('/listings', {
   },
 });
 
-=======
 export const sellPageRouteName = 'Sell_Books_Page';
 userRoutes.route('/sell', {
   name: sellPageRouteName,
@@ -93,7 +92,7 @@ userRoutes.route('/sell', {
     BlazeLayout.render('User_Layout', { main: sellPageRouteName });
   },
 });
->>>>>>> master
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

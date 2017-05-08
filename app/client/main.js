@@ -15,6 +15,7 @@ import '/imports/ui/pages/browse-books';
 import '/imports/ui/pages/add-books';
 import '/imports/ui/pages/homepage';
 import '/imports/ui/pages/sell-books';
+import '/imports/ui/pages/your-books';
 import '/imports/ui/stylesheets/style.css';
 import '/imports/api/base';
 import '/imports/api/profile';

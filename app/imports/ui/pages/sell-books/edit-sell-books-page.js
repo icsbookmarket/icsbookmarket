@@ -6,13 +6,13 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Books } from '/imports/api/book/BookCollection.js';
 import { BookForSale } from '/imports/api/bookforsale/BookForSaleCollection.js';
 
-Template.Sell_Books_Page.helpers({
+Template.Edit_Sell_Books_Page.helpers({
   books() {
     return Books.find();
   },
 });
 
-Template.Sell_Books_Page.onRendered(function enableDropDown() {
+Template.Edit_Sell_Books_Page.onRendered(function enableDropDown() {
   this.$('.dropdown').dropdown();
 });
 
@@ -20,14 +20,15 @@ const displayErrorMessages = 'displayErrorMessages';
 
 export const conditionList = ['Excellent', 'Great', 'Good', 'Fair', 'Poor'];
 
-Template.Sell_Books_Page.onCreated(function onCreated() {
+Template.Edit_Sell_Books_Page.onCreated(function onCreated() {
   this.subscribe(Books.getPublicationName());
+  this.subscribe(BookForSale.getpublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = BookForSale.getSchema().namedContext('Sell_Books_Page');
 });
 
-Template.Sell_Books_Page.helpers({
+Template.Edit_Sell_Books_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -40,6 +41,9 @@ Template.Sell_Books_Page.helpers({
     return _.map(conditionList, function makeLevelObject(level) {
       return { label: level };
     });
+  },
+  bookforsale() {
+    return BookForSale.findDoc(FlowRouter.getParam('username'));
   },
   booktitles() {
     const bookDataTitles = Books.find().fetch();
@@ -91,12 +95,12 @@ Template.Sell_Books_Page.events({
     if (instance.context.isValid()) {
       console.log('What is here vv');
       console.log(newSaleData);
-      BookForSale.define(newSaleData);
+      BookForSale.update(FlowRouter.getParam('titleOfSale'), { $set: newSaleData });
+      // BookForSale.define(newSaleData);
       instance.messageFlags.set(displayErrorMessages, false);
-      console.log('Is the error after me?');
       // instance.$('.dropdown').dropdown('restore defaults');
       const user = Meteor.user().profile.name;
-      FlowRouter.go(`/${user}/your`);
+      FlowRouter.go(`/${user}/browse`);
     } else {
       console.log('What is here else');
       console.log(newSaleData);

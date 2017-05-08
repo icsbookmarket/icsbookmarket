@@ -80,11 +80,25 @@ userRoutes.route('/browse', {
     BlazeLayout.render('User_Layout', { main: browsePageRouteName });
   },
 });
+export const yourPageRouteName = 'Your_Books_Page';
+userRoutes.route('/your', {
+  name: yourPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: yourPageRouteName });
+  },
+});
 export const sellPageRouteName = 'Sell_Books_Page';
 userRoutes.route('/sell', {
   name: sellPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: sellPageRouteName });
+  },
+});
+export const editPageRouteName = 'Edit_Sell_Books_Page';
+userRoutes.route('/edit', {
+  name: editPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: editPageRouteName });
   },
 });
 export const filterPageRouteName = 'Filter_Page';

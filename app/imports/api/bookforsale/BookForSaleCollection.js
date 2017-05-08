@@ -1,6 +1,5 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { Books } from '/imports/api/book/BookCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -18,26 +17,34 @@ class BookForSaleCollection extends BaseCollection {
     }));
   }
 
-  define({ username = '', firstName = '', lastName = '', title = '', condition = '', price = '', description = '' }) {
+  define({ username = '', firstNameOfSeller = '', lastNameOfSeller = '', titleOfSale = '', condition = '', price = '', description = '' }) {
     const checkPattern = {
-      username: String, firstName: String, lastName: String, title: String, condition: String,
+      username: String, firstNameOfSeller: String, lastNameOfSeller: String, titleOfSale: String, condition: String,
       price: String, description: String,
     };
-    check({ username, firstName, lastName, title, condition, price, description }, checkPattern);
-    return this._collection.insert({ username, firstName, lastName, title, condition, price, description });
+    check({ username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description }, checkPattern);
+    return this._collection.insert({
+      username,
+      firstNameOfSeller,
+      lastNameOfSeller,
+      titleOfSale,
+      condition,
+      price,
+      description,
+    });
   }
+
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const username = doc.username;
-    const firstName = doc.firstName;
-    const lastName = doc.lastName;
-    const title = doc.title;
+    const firstNameOfSeller = doc.firstNameOfSeller;
+    const lastNameOfSeller = doc.lastNameOfSeller;
+    const titleOfSale = doc.titleOfSale;
     const condition = doc.condition;
     const price = doc.price;
     const description = doc.description;
-    return { username, firstName, lastName, title, condition, price, description };
+    return { username, firstNameOfSeller, lastNameOfSeller, titleOfSale, condition, price, description };
   }
 }
 
-export const BookForSales = new BookForSaleCollection();
-
+export const BookForSale = new BookForSaleCollection();

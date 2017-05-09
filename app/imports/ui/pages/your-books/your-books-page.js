@@ -26,7 +26,7 @@ Template.Your_Books_Page.onRendered(function enableDropDown() {
   this.$('.dropdown').dropdown();
 });
 
-Template.Your_Books_Page.events({
+/*Template.Your_Books_Page.events({
   'click.delete'(event) {
     event.preventDefault();
     console.log(BookForSale);
@@ -36,3 +36,4 @@ Template.Your_Books_Page.events({
     FlowRouter.go(`/${user}/your`);
   },
 });
+*/

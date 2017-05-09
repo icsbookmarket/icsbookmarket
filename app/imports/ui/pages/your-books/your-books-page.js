@@ -26,11 +26,14 @@ Template.Your_Books_Page.onRendered(function enableDropDown() {
   this.$('.dropdown').dropdown();
 });
 
-Template.Your_Books_Page.events({
+/*Template.Your_Books_Page.events({
   'click.delete'(event) {
     event.preventDefault();
-    BookForSale.removeIt(FlowRouter.getParam('titleOfSale'));
+    console.log(BookForSale);
+    console.log(FlowRouter.getParam('_id'));
+    BookForSale.removeIt(FlowRouter.getParam('_id'));
     const user = Meteor.user().profile.name;
     FlowRouter.go(`/${user}/your`);
   },
 });
+*/

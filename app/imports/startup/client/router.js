@@ -80,6 +80,13 @@ userRoutes.route('/browse', {
     BlazeLayout.render('User_Layout', { main: browsePageRouteName });
   },
 });
+export const availablePageRouteName = 'Available_Books_Page';
+userRoutes.route('/available', {
+  name: availablePageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: availablePageRouteName });
+  },
+});
 export const yourPageRouteName = 'Your_Books_Page';
 userRoutes.route('/your', {
   name: yourPageRouteName,

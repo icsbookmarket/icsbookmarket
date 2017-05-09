@@ -1,20 +1,16 @@
 import { Template } from 'meteor/templating';
-import { Books } from '/imports/api/book/BookCollection.js';
+import { BookForSale } from '/imports/api/bookforsale/BookForSaleCollection.js';
 
-Template.Browse_Books_Page.onCreated(function onCreated() {
-  this.subscribe(Books.getPublicationName());
+Template.Available_Books_Page.onCreated(function onCreated() {
+  this.subscribe(BookForSale.getPublicationName());
 });
 
-Template.Browse_Books_Page.helpers({
+Template.Available_Books_Page.helpers({
 
   /**
-   * @returns {*} All of the Bookdata documents.
+   * @returns {*} All of the available books documents.
    */
   books() {
-    return Books.find({}, { sort: { course: 1 } });
+    return BookForSale.find();
   },
 });
-
-
-
-

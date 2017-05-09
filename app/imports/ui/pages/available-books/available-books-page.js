@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+import { _ } from 'meteor/underscore';
 import { BookForSale } from '/imports/api/bookforsale/BookForSaleCollection.js';
 
 Template.Available_Books_Page.onCreated(function onCreated() {
@@ -14,3 +15,4 @@ Template.Available_Books_Page.helpers({
     return BookForSale.find();
   },
 });
+

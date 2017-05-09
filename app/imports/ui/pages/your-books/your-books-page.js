@@ -30,8 +30,8 @@ Template.Your_Books_Page.events({
   'click.delete'(event) {
     event.preventDefault();
     console.log(BookForSale);
-    console.log(FlowRouter.getParam('doc'));
-    BookForSale.removeIt(FlowRouter.getParam('doc'));
+    console.log(FlowRouter.getParam('_id'));
+    BookForSale.removeIt(FlowRouter.getParam('_id'));
     const user = Meteor.user().profile.name;
     FlowRouter.go(`/${user}/your`);
   },

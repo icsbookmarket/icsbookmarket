@@ -3,19 +3,20 @@
 
     <br>
     <div class="row">
-      <div class="nine wide column" style="padding-left: 1cm; padding-right: 1cm">
-        <br><br>
-        <h1>WELCOME TO ICS BOOK MARKET!</h1><br>
-        <hr>
-      </div>
+      <div class="nine wide column" style="padding-left: 1cm; padding-right: 1cm"></div>
     </div>
 
     <div class="ui container">
-      <div class="owl-carousel">
-        <div><img style="width: 400px; height: 500px" class="ui centered image" src="http://zeabooks.com/wp-content/uploads/2015/03/Discrete-Mathematics-and-Its-Applications.jpg" href="#"></div>
-        <div><img style="width: 400px; height: 500px" class="ui centered image" src="http://ecx.images-amazon.com/images/I/51iW0u2RXdL.jpg" href="#"></div>
-        <div><img style="width: 400px; height: 500px" class="ui centered image" src="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg" href="#"></div>
-        <div><img style="width: 400px; height: 500px" class="ui centered image" src="https://www.pearsonhighered.com/assets/bigcovers/0/2/0/1/0201781344.jpg" href="#"></div>
+      <div class="owl-carousel" style="margin-top: -2%">
+        <div><img style="width: 400px; height: 475px" class="ui centered image"
+                  src="http://zeabooks.com/wp-content/uploads/2015/03/Discrete-Mathematics-and-Its-Applications.jpg"
+                  href="#"></div>
+        <div><img style="width: 400px; height: 475px" class="ui centered image"
+                  src="http://ecx.images-amazon.com/images/I/51iW0u2RXdL.jpg" href="#"></div>
+        <div><img style="width: 400px; height: 475px" class="ui centered image"
+                  src="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg" href="#"></div>
+        <div><img style="width: 400px; height: 475px" class="ui centered image"
+                  src="https://www.pearsonhighered.com/assets/bigcovers/0/2/0/1/0201781344.jpg" href="#"></div>
       </div>
     </div>
 
@@ -30,7 +31,10 @@
       });
     </script>
 
-    <button style="padding-left: 1cm; padding-right: 1cm;" class="{{ isActiveRoute 'Browse_Books_Page' }} ui fluid large red button" onclick="location.href='{{ pathFor 'browse' username=routeUserName}}'">Browse Books</button>
+    <button style="padding-left: 1cm; padding-right: 1cm; margin-top: -1%; max-width: 1100px"
+            class="{{ isActiveRoute 'Browse_Books_Page' }} ui fluid large red button"
+            onclick="location.href='{{ pathFor 'browse' username=routeUserName}}'">Browse Books
+    </button>
 
   </div>
 </template>

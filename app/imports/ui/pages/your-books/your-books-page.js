@@ -29,7 +29,9 @@ Template.Your_Books_Page.onRendered(function enableDropDown() {
 Template.Your_Books_Page.events({
   'click.delete'(event) {
     event.preventDefault();
-    BookForSale.removeIt(FlowRouter.getParam('titleOfSale'));
+    console.log(BookForSale);
+    console.log(FlowRouter.getParam('doc'));
+    BookForSale.removeIt(FlowRouter.getParam('doc'));
     const user = Meteor.user().profile.name;
     FlowRouter.go(`/${user}/your`);
   },

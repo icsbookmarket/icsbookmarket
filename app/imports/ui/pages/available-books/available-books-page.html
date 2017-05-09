@@ -1,15 +1,21 @@
 <template name="Available_Books_Page">
-  <div class="ui centered container">
+  <div class="ui centered container" style="padding-bottom: 1%">
     <div class="ui four cards">
-      {{#each available in BookForSale }}
+      {{#each BookForSale in available }}
         <div class="ui centered raised card">
           <div class="content">
-            <div class="header">{{ available.titleOfSale }}</div>
-            <div class="description">
-              <p>Seller: {{ available.firstNameOfSeller }} {{ available.lastNameOfSeller }}</p>
-              <p>Description: {{ available.description }}</p>
-              <p>Price: {{ available.price }}</p>
-            </div>
+
+            <div class="header">{{ BookForSale.titleOfSale }}</div>
+            <hr>
+            <br>
+            <div class="sub-content">Seller: {{ BookForSale.firstNameOfSeller }} {{ BookForSale.lastNameOfSeller}}</div>
+            <br>
+            <div class="meta"><a>Condition: {{ BookForSale.condition }}</a></div>
+            <div class="meta"><a>Description: {{ BookForSale.description }}</a></div>
+            <div class="meta"><a>Price: ${{ BookForSale.price }}</a></div>
+          </div>
+          <div class="extra content">
+            <button class="ui fluid teal button">Contact Seller</button>
           </div>
         </div>
       {{/each}}

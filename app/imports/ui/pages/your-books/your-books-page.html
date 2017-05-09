@@ -1,8 +1,8 @@
 <template name="Your_Books_Page">
-  <div class="ui centered card-container" style="margin-top: 2%; margin-bottom: 1%; margin-left: 1%; margin-right: 1%;">
+  <div class="ui centered container" style="margin-top: 8%; margin-bottom: 11%">
     <div class="ui four stackable doubling cards">
       {{#each book in yourbooks}}
-      <div class="ui centered raised card">
+      <div class="ui raised card">
         <div class="content">
           <div class="header">{{book.titleOfSale}}</div>
         </div>
@@ -48,11 +48,11 @@
         <div class="center aligned extra content">
           <div class="ui buttons">
 
-            <div class="ui big green button">
+            <div class="ui green button">
               <a style="color: white;" class="{{ isActiveRoute 'Edit_Sell_Books_Page'}} item" href="{{ pathFor 'Edit_Sell_Books_Page' username=routeUserName }}">Edit Post</a>
             </div>
             <div class="or"></div>
-            <button class="ui big red button delete">Delete Post</button>
+            <button class="ui red button delete">Delete Post</button>
           </div>
         </div>
       </div>

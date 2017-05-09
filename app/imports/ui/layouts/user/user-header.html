@@ -3,20 +3,20 @@
   <img class="ui fluid image" src="/images/header-books.png" style="max-height: 250px;"/>
   <div class="ui center aligned grid container">
     <div class="ui borderless menu"
-         style="background-color: transparent; margin-top: -6%; margin-bottom: 3.75%; border-radius: 0px; text-shadow: 1px 1px grey">
-      <a class="{{ isActiveRoute 'Home'}} item" href="{{pathFor 'Home' username=routeUserName}}" style="color: white;">
-        <h2 style="15em">UHM ICS
+         style="background-color: transparent; margin-top: -6%; margin-bottom: 3.75%; border-radius: 0; text-shadow: 1px 1px grey">
+      <a class="{{ isActiveRoute 'Home'}} item" href="{{ pathFor 'Home' username=routeUserName }}" style="color: white;">
+        <h2 style="size:15em">UHM ICS
           Book Market</h2></a>
-      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page'}} item"
+      <a style="color: white;" class="{{ isActiveRoute 'Browse_Books_Page' }} item"
          href="{{ pathFor 'Browse_Books_Page' username=routeUserName }}">Browse Books</a>
-      <a style="color: white;" class="{{ isActiveRoute 'Available_Books_Page'}} item"
-         href="{{ pathFor 'Available_Books_Page' }}">Available Books</a>
-      <a style="color: white;" class="{{ isActiveRoute 'Add_Books_Page'}} item"
-         href="{{ pathFor 'Add_Books_Page' username=routeUserName}}">Add Books</a>
-      <a style="color: white;" class="{{ isActiveRoute 'Sell_Books_Page'}} item"
+      <a style="color: white;" class="{{ isActiveRoute 'Available_Books_Page' }} item"
+         href="{{ pathFor 'Available_Books_Page' username=routeUserName}}">Available Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Add_Books_Page' }} item"
+         href="{{ pathFor 'Add_Books_Page' username=routeUserName }}">Add Books</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Sell_Books_Page' }} item"
          href="{{ pathFor 'Sell_Books_Page' username=routeUserName }}">Sell Books</a>
-      <a style="color: white;" class="{{ isActiveRoute 'Your_Books_Page'}} item"
-         href="{{ pathFor 'Your_Books_Page' username=routeUserName}}">My Listings</a>
+      <a style="color: white;" class="{{ isActiveRoute 'Your_Books_Page' }} item"
+         href="{{ pathFor 'Your_Books_Page' username=routeUserName }}">My Listings</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>

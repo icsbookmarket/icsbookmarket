@@ -1,51 +1,16 @@
 <template name="Available_Books_Page">
-  <div class="ui centered card-container" style="margin-top: 2%; margin-bottom: 1%; margin-left: 1%; margin-right: 1%;">
-    <div class="ui four stackable doubling cards">
-      {{#each book in yourbooks}}
+  <div class="ui centered container">
+    <div class="ui four cards">
+      {{#each available in BookForSale }}
         <div class="ui centered raised card">
           <div class="content">
-            <div class="header">{{book.titleOfSale}}</div>
-          </div>
-          <div class="content">
-            <div class="meta">Condition: {{book.condition}} <i class="yellow star icon"></i></div>
-            <div class="ui small feed">
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    ${{book.price}}
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    <i class="student icon"></i>
-                    {{book.firstNameOfSeller}} {{book.lastNameOfSeller}}
-                  </div>
-                </div>
-              </div>
-
-              <div class="event">
-                <div class="content">
-                  <div class="summary">
-                    Description: {{book.description}}
-                  </div>
-                </div>
-              </div>
-              <div class="event">
-                <div class="extra content">
-                  <div class="ui equal width center aligned grid">
-                    <div class="column">
-                      <a href="mailto:{{book.username}}@hawaii.edu"><i class="big mail icon"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="header">{{ available.titleOfSale }}</div>
+            <div class="description">
+              <p>Seller: {{ available.firstNameOfSeller }} {{ available.lastNameOfSeller }}</p>
+              <p>Description: {{ available.description }}</p>
+              <p>Price: {{ available.price }}</p>
             </div>
           </div>
-
         </div>
       {{/each}}
     </div>

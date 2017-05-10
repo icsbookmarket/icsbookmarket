@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://shaziney:aureznia91@ds137101.mlab.com:37101/uhmicsbookmarket"
+    }
+  }
+}

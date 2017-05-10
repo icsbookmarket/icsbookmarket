@@ -15,7 +15,7 @@
             <div class="meta"><a>Price: ${{ BookForSale.price }}</a></div>
           </div>
           <div class="extra content">
-            <button class="ui fluid teal button">Contact Seller</button>
+            <button class="ui fluid teal button" onClick="window.location.href='mailto:{{ BookForSale.username }}@hawaii.edu';">Contact Seller</button>
           </div>
         </div>
       {{/each}}

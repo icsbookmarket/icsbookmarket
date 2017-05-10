@@ -1,7 +1,8 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb://shaziney:password@ds137291.mlab.com:37291/icsbookmarket"
+      "MONGO_URL": "mongodb://shaziney:password@ds137271.mlab.com:37271/icsbookmarket"
     }
   }
 }
+
